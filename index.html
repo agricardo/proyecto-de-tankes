@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tank Battle Ground</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="start" id="overStart">
+            <h1 onclick="start()" id="start">Start</h1>
+    </div>
+
+
+
+  <center>  <table class="field" id="field"></table> </center>
+
+  <div class="button rojo" id="button" onmouseover="display1()" onmouseout="displayNone1()">
+    <h1 onclick="changeTurn()" >Next Turn</h1>
+  </div>
+
+  <div class="atak rojo" id="atak" onmouseover="display2()" onmouseout="displayNone2()">
+    <h1 onclick="atakFunction()" >Atak</h1>
+  </div>
+
+  <div class="move rojo" id="move" onmouseover="display3()" onmouseout="displayNone3()">
+    <h1 onclick="moveFunction()" >Move</h1>
+  </div>
+
+
+
+
+
+
+
+
+<!-- <script src="js/animation.js"></script> -->
+<script src="js/main.js"></script>
+<!-- <script src="js/original.js"></script> -->
+</body>
+</html>
