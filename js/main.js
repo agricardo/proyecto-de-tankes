@@ -92,6 +92,8 @@ function changeTurn() {
     }
     document.getElementById('2-2').classList.add("capitalRed");
     document.getElementById('13-13').classList.add("capitalGreen");
+    atak = false;
+    move = true;
 }
 
 // funcion para saber si mover las piezas o atacar
@@ -271,7 +273,7 @@ function play(T) {
         }
 
     } else if (movement) {
-        if (T.classList.value == "green" || T.classList.value == "capitalRed green" || T.classList.value == "capitalGreen green"  || T.classList.value == "capitalGreen stay green" || T.classList.value == "capitalRed stay green") {
+        if (T.classList.value == "green" || T.classList.value == "capitalRed green" || T.classList.value == "capitalGreen green" || T.classList.value == "capitalGreen stay green" || T.classList.value == "capitalRed stay green") {
             if (T.innerHTML[1] != "s") {
                 father.innerHTML = "";
                 T.innerHTML = son;
@@ -344,13 +346,13 @@ function play(T) {
 
             }
         }
-        console.log("el contenido es "+T.classList)
+        console.log("el contenido es " + T.classList)
     } else if (movement) {
         if (T.classList.value == "green" || T.classList.value == "capitalRed green" || T.classList.value == "capitalGreen green" || T.classList.value == "capitalGreen stay green" || T.classList.value == "capitalRed stay green") {
             if (T.innerHTML[1] != "s") {
                 father.innerHTML = "";
                 T.innerHTML = son;
-                
+
                 document.getElementById(T.id).classList.add("stay")
                 for (i = 0; elements[i]; i++) elements[i].classList.remove("hand");
                 movement = false;
@@ -414,13 +416,13 @@ function play(T) {
             Alert.render('Blue Wins.');
         } else if (document.getElementById('13-13').innerHTML == '<span class="rojo" id="rojo"><img src="img/tanqueR.png"></span>') {
             Alert.render('Red Wins.');
-        }else if (document.getElementById('13-13').innerHTML == '<span class="rojo" id="rojo"><img src="img/artilleriaR.png"></span>') {
+        } else if (document.getElementById('13-13').innerHTML == '<span class="rojo" id="rojo"><img src="img/artilleriaR.png"></span>') {
             Alert.render('Red Wins.');
-        }else if (document.getElementById('2-2').innerHTML == '<span class="azul" id="azul"><img src="img/artilleriaA.png"></span>') {
+        } else if (document.getElementById('2-2').innerHTML == '<span class="azul" id="azul"><img src="img/artilleriaA.png"></span>') {
             Alert.render('Blue Wins.');
-        }else if (document.getElementById('13-13').innerHTML == '<span class="rojo" id="rojo"><img src="img/infanteriaR.png"></span>') {
+        } else if (document.getElementById('13-13').innerHTML == '<span class="rojo" id="rojo"><img src="img/infanteriaR.png"></span>') {
             Alert.render('Red Wins.');
-        }else if (document.getElementById('2-2').innerHTML == '<span class="azul" id="azul"><img src="img/infanteriaA.png"></span>') {
+        } else if (document.getElementById('2-2').innerHTML == '<span class="azul" id="azul"><img src="img/infanteriaA.png"></span>') {
             Alert.render('Blue Wins.');
         }
     }
@@ -465,26 +467,25 @@ function start() {
 }
 
 // mejorando el cartel de ganador
-function CustomAlert(){
-    this.render = function(dialog){
+function CustomAlert() {
+    this.render = function (dialog) {
         var winW = window.innerWidth;
         var winH = window.innerHeight;
         var dialogoverlay = document.getElementById('dialogoverlay');
         var dialogbox = document.getElementById('dialogbox');
         dialogoverlay.style.display = "block";
-        dialogoverlay.style.height = winH+"px";
-        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+        dialogoverlay.style.height = winH + "px";
+        dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
         document.getElementById('dialogboxhead').innerHTML = "Congratulations";
         document.getElementById('dialogboxbody').innerHTML = dialog;
         document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
     }
-	this.ok = function(){
-		document.getElementById('dialogbox').style.display = "none";
+    this.ok = function () {
+        document.getElementById('dialogbox').style.display = "none";
         document.getElementById('dialogoverlay').style.display = "none";
         start();
-	}
+    }
 }
 var Alert = new CustomAlert();
-
