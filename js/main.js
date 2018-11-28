@@ -101,6 +101,9 @@ function changeTurn() {
 function atakFunction() {
     atak = true;
     move = false;
+    for (var z = 0; z < 257; z++) {
+        paintedCells[z].classList.remove("explosion");
+    }
     // console.log("atak is " + atak);
     // console.log("move is " + move);
 }
@@ -108,6 +111,9 @@ function atakFunction() {
 function moveFunction() {
     atak = false;
     move = true;
+    for (var z = 0; z < 257; z++) {
+        paintedCells[z].classList.remove("explosion");
+    }
     // console.log("atak is " + atak);
     // console.log("move is " + move);
 }
@@ -461,6 +467,7 @@ function start() {
     document.getElementById("field").innerHTML = "";
     createField();
     document.getElementById('overStart').classList.add('startNone');
+    document.getElementById('logo').classList.add('startNone');
     document.getElementById('2-2').classList.add("capitalRed");
     document.getElementById('13-13').classList.add("capitalGreen");
 

@@ -5,6 +5,11 @@ body {
     background-size: cover;
 
 }
+.logo{
+    margin-top: 40px;
+    width: 600px;
+    height: auto;
+}
 
 .field {
     background-image: url(../img/background.jpg);
