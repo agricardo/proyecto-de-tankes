@@ -74,7 +74,7 @@ function changeTurn() {
         document.getElementById('atak').classList.add('azul');
         document.getElementById('move').classList.remove('rojo');
         document.getElementById('move').classList.add('azul');
-        console.log("turno de las azules")
+        // console.log("turno de las azules")
     } else {
         playerTurn = "rojo";
         document.getElementById('button').classList.remove('azul');
@@ -83,7 +83,7 @@ function changeTurn() {
         document.getElementById('atak').classList.add('rojo');
         document.getElementById('move').classList.remove('azul');
         document.getElementById('move').classList.add('rojo');
-        console.log("turno de las rojas")
+        // console.log("turno de las rojas")
     }
 
     for (var p = 0; p < 256; p++) {
@@ -101,15 +101,15 @@ function changeTurn() {
 function atakFunction() {
     atak = true;
     move = false;
-    console.log("atak is " + atak);
-    console.log("move is " + move);
+    // console.log("atak is " + atak);
+    // console.log("move is " + move);
 }
 
 function moveFunction() {
     atak = false;
     move = true;
-    console.log("atak is " + atak);
-    console.log("move is " + move);
+    // console.log("atak is " + atak);
+    // console.log("move is " + move);
 }
 // recoger y desplegar los botones
 
@@ -164,7 +164,7 @@ function createField() {
 }
 
 function play(T) {
-    console.log("click en la celda = " + T.id)
+    // console.log("click en la celda = " + T.id)
     elements = document.querySelectorAll("table, table span ");
     paintedCells = document.querySelectorAll("table, table td");
 
@@ -174,7 +174,7 @@ function play(T) {
             if (move == true) {
                 if (!T.classList.contains("stay")) {
                     if (T.innerHTML[43] == "t") {
-                        console.log(T.innerHTML[43])
+                        // console.log(T.innerHTML[43])
                         father = T;
                         son = T.innerHTML;
                         for (i = 0; elements[i]; i++) elements[i].classList.add("hand");
@@ -183,7 +183,7 @@ function play(T) {
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, tank.movility);
-                        console.log(cells);
+                        // console.log(cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("green");
                         }
@@ -221,7 +221,7 @@ function play(T) {
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, tank.range);
-                        console.log("rango de ataque = " + cells);
+                        // console.log("rango de ataque = " + cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("red");
                         }
@@ -251,17 +251,17 @@ function play(T) {
             if (move == true) {
                 if (!T.classList.contains("stay")) {
                     if (T.innerHTML[43] == "i") {
-                        console.log(T.innerHTML[43])
+                        // console.log(T.innerHTML[43])
                         father = T;
                         son = T.innerHTML;
                         for (i = 0; elements[i]; i++) elements[i].classList.add("hand");
                         T.querySelector("span").style.opacity = ".4";
-                        console.log("se declara movimiento verdadero");
+                        // console.log("se declara movimiento verdadero");
                         movement = true;
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, infantery.movility);
-                        console.log(cells);
+                        // console.log(cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("green");
                         }
@@ -297,7 +297,7 @@ function play(T) {
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, infantery.range);
-                        console.log("rango de ataque = " + cells);
+                        // console.log("rango de ataque = " + cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("red");
                         }
@@ -327,7 +327,7 @@ function play(T) {
             if (move == true) {
                 if (!T.classList.contains("stay")) {
                     if (T.innerHTML[43] == "a") {
-                        console.log(T.innerHTML[43])
+                        // console.log(T.innerHTML[43])
                         father = T;
                         son = T.innerHTML;
                         for (i = 0; elements[i]; i++) elements[i].classList.add("hand");
@@ -336,7 +336,7 @@ function play(T) {
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, artillery.movility);
-                        console.log(cells);
+                        // console.log(cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("green");
                         }
@@ -346,7 +346,7 @@ function play(T) {
 
             }
         }
-        console.log("el contenido es " + T.classList)
+        // console.log("el contenido es " + T.classList)
     } else if (movement) {
         if (T.classList.value == "green" || T.classList.value == "capitalRed green" || T.classList.value == "capitalGreen green" || T.classList.value == "capitalGreen stay green" || T.classList.value == "capitalRed stay green") {
             if (T.innerHTML[1] != "s") {
@@ -373,7 +373,7 @@ function play(T) {
 
                         // pasando los atributos de id y alcance
                         var cells = getRange(T.id, artillery.range);
-                        console.log("rango de ataque = " + cells);
+                        // console.log("rango de ataque = " + cells);
                         for (var w = 0; w < cells.length; w++) {
                             document.getElementById(cells[w]).classList.add("red");
                         }
